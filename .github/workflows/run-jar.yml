@@ -1,0 +1,23 @@
+name: Run My JAR Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run My JAR Action
+        id: run-jar
+        uses: ./.github/action
+        with:
+          jar-path: '../HelloWorld.jar'
+
+      - name: Print Action Output
+        run: echo "${{ steps.run-jar.outputs.output }}"
