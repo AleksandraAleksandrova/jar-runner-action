@@ -15,7 +15,7 @@ jobs:
 
       - name: Run My JAR Action
         id: run-jar
-        uses: .
+        uses: 'AleksandraAleksandrova/jar-runner-action@main'
         with:
           jar-path: '../HelloWorld.jar'
 
