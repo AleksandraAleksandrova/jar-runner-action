@@ -6,8 +6,8 @@ inputs:
     description: 'Path to the JAR file'
     required: true
 
-output:
-  output:
+outputs:
+  jar-output:
     description: 'The output of the JAR file'
     
 runs:
