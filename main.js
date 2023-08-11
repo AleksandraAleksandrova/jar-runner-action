@@ -3,8 +3,9 @@ try {
     const { exec } = require('child_process');
 
     try {
-        const jarPath = core.getInput('jar-path');
+        //const jarPath = core.getInput('jar-path');
         console.log('Current working directory:', process.cwd());
+        const jarPath = process.cwd() + '/HelloWorld.jar';
         
         exec(`java -jar ${jarPath}`, (error, stdout, stderr) => {
             if (error) {
