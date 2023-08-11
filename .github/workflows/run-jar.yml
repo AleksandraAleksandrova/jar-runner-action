@@ -16,6 +16,14 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Check Java Version
+        run: java -version
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: 17
+
       - name: Run JAR runner
         id: run-jar
         uses: 'AleksandraAleksandrova/jar-runner-action@main'
