@@ -16,11 +16,11 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Run My JAR Action
+      - name: Run JAR runner
         id: run-jar
         uses: 'AleksandraAleksandrova/jar-runner-action@main'
         with:
           jar-path: './HelloWorld.jar'
 
-      - name: Print Action Output
+      - name: Print JAR Output
         run: echo "${{ steps.run-jar.outputs.output }}"

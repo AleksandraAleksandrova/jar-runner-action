@@ -1,9 +1,15 @@
 name: 'Run JAR Action'
 description: 'Run a JAR file'
+
 inputs:
   jar-path:
     description: 'Path to the JAR file'
     required: true
+
+output:
+  output:
+    description: 'The output of the JAR file'
+    
 runs:
   using: 'node16'
   main: 'main.js'

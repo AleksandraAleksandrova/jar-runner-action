@@ -4,7 +4,8 @@ try {
 
     try {
         const jarPath = core.getInput('jar-path');
-
+        console.log('Current working directory:', process.cwd());
+        
         exec(`java -jar ${jarPath}`, (error, stdout, stderr) => {
             if (error) {
                 core.setFailed(`Error: ${error.message}`);
