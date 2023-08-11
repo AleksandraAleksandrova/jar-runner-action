@@ -16,9 +16,6 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Check Java Version
-        run: java -version
-
       - name: Set up Java
         uses: actions/setup-java@v3
         with:

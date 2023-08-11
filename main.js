@@ -4,13 +4,12 @@ try {
 
     try {
         const jarPathRelative = core.getInput('jar-path').trim();
-        console.log(`Running jar: ${jarPathRelative}`);
         exec(`java -jar ${jarPathRelative}`, (error, stdout, stderr) => {
             if (error) {
                 core.setFailed(`Error: ${error.message}`);
             }
             console.log(stdout);
-            core.setOutput('output', stdout);
+            core.setOutput('jar-output', stdout);
         });
 
     } catch (error) {
