@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      
+      - name: Install Dependencies
+        run: npm install
 
       - name: Run My JAR Action
         id: run-jar
