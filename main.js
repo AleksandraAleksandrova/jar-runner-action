@@ -3,7 +3,7 @@ try {
     const { exec } = require('child_process');
 
     try {
-        const jarPath = './HelloWorld.jar';
+        const jarPath = core.getInput('jar-path');
 
         exec(`java -jar ${jarPath}`, (error, stdout, stderr) => {
             if (error) {

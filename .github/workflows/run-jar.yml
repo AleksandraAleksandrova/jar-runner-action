@@ -20,7 +20,7 @@ jobs:
         id: run-jar
         uses: 'AleksandraAleksandrova/jar-runner-action@main'
         with:
-          jar-path: '../HelloWorld.jar'
+          jar-path: './HelloWorld.jar'
 
       - name: Print Action Output
         run: echo "${{ steps.run-jar.outputs.output }}"
