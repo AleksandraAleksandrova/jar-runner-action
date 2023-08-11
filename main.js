@@ -6,15 +6,11 @@ try {
     try {
         console.log('Running the jar exactly as in my local terminal:')
         exec('java -jar ./HelloWorld.jar', (error, stdout, stderr) => {
-            if (error) 
-                core.setFailed(`Error: ${error.message}`);
-            else 
-                console.log(stdout);
+            console.log('Output:', stdout);
         });
 
-        console.log('Local run passed \n Current working directory:', process.cwd());
+        console.log('Local run passed.\nCurrent working directory:', process.cwd());
         
-
         console.log("USE RELATIVE PATH")
         const jarPathRelative = core.getInput('jar-path').trim();
         console.log('Relative Jar Path from workflow:', jarPathRelative);
@@ -25,7 +21,6 @@ try {
             exec(`java -jar ${jarPathRelative}`, (error, stdout, stderr) => {
                 if (error) {
                     core.setFailed(`Error: ${error.message}`);
-                    return;
                 }
                 console.log(stdout);
                 core.setOutput('output', stdout);
@@ -42,7 +37,6 @@ try {
             exec(`java -jar ${jarPathAbsolute}`, (error, stdout, stderr) => {
                 if (error) {
                     core.setFailed(`Error: ${error.message}`);
-                    return;
                 }
                 console.log(stdout);
                 core.setOutput('output', stdout);
