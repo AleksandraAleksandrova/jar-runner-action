@@ -1,11 +1,15 @@
 const core = require('@actions/core');
 const { exec } = require('child_process');
 const axios = require('axios');
+const token = process.env.GITHUB_TOKEN;
 
 try {
   const jarUrl = 'https://github.com/AleksandraAleksandrova/jar-runner-action/releases/download/1.0/HelloWorld.jar';
   axios.get(jarUrl, {
     responseType: 'arraybuffer',
+    headers: {
+        Authorization: `Bearer ${token}`,
+    },
   })
   .then(response => {
     exec(`java -jar HelloWorld.jar`, (error, stdout, stderr) => {
