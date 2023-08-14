@@ -1,11 +1,6 @@
 name: 'Run JAR Action'
 description: 'Run a JAR file'
 
-inputs:
-  jar-path:
-    description: 'Path to the JAR file'
-    required: true
-
 outputs:
   jar-output:
     description: 'The output of the JAR file'
