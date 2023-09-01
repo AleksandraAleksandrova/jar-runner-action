@@ -4,7 +4,8 @@ const exec = require('@actions/exec');
 async function run() {
   try {
     const name = core.getInput('name');
-    const jarPath = './Greet.jar';
+    //const jarPath = './Greet.jar';
+    const jarPath = path.join(process.env.GITHUB_WORKSPACE, 'Greet.jar');
 
     let stdout = '';
 
