@@ -27,11 +27,11 @@ async function run() {
     */
 
     console.log(`Jar Path: ${jarPath1}`);
-    await exec.exec('java', ['-jar', jarPath1, name], options);
+    await exec.exec('java', ['-jar', jarPath1, name]);
     //core.setOutput('jar-output', stdout);
 
     console.log(`Jar Path: ${jarPath2}`);
-    await exec.exec('java', ['-jar', jarPath2, name], options);
+    await exec.exec('java', ['-jar', jarPath2, name]);
     //core.setOutput('jar-output', stdout);
 
   } catch (error) {
