@@ -3,9 +3,21 @@ const exec = require('@actions/exec');
 
 async function run() {
   try {
-    const jarPath = './HelloWorld.jar';
+    const name = core.getInput('name');
+    const jarPath = './Greet.jar';
 
-    await exec.exec('java', ['-jar', jarPath]);
+    let stdout = '';
+
+    const options = {
+      listeners: {
+        stdout: (data) => {
+          stdout += data.toString();
+        },
+      },
+    };
+
+    await exec.exec('java', ['-jar', jarPath, name], options);
+    core.setOutput('jar-output', stdout);
 
   } catch (error) {
     core.setFailed(`Action failed with error: ${error.message}`);

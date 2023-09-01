@@ -1,5 +1,9 @@
-name: 'Run JAR Action'
-description: 'Run a JAR file'
+name: 'Greeter'
+description: 'Run a JAR file, which greets the user'
+
+inputs:
+  name:
+    description: 'The account to greet'
 
 outputs:
   jar-output:
