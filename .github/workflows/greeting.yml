@@ -1,0 +1,21 @@
+name: 'Greeter workflow'
+
+on:
+  push:
+    branches: [ main ]
+      
+jobs:
+      
+  Personal-greeting-Job:
+    runs-on: ubuntu-latest
+    name: A job to greet the user
+    
+    steps:
+      - name: Run greeting action
+        id: run-greet
+        uses: AleksandraAleksandrova/jar-runner-action@main
+        with:
+          name: 'Anna'
+
+      - name: Print Greet Output
+        run: echo "Greet Output:${{ steps.run-greet.outputs.jar-output }}"
