@@ -3,14 +3,11 @@ const exec = require('@actions/exec');
 
 async function run() {
   try {
-    const name = 'Anna';
     const jarPath = './Greet.jar'
-
-    const name2 = core.getInput('name');
-    console.log(`Hello ${name2}!`);
+    const name = core.getInput('name');
+    console.log(`Hello ${name}!`);
 
     await exec.exec('java', ['-jar', jarPath, name]);
-
     core.setOutput('jar-output', 'Success');
 
   } catch (error) {
