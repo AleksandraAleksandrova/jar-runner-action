@@ -24,7 +24,7 @@ jobs:
 
       - name: Run JAR runner
         id: run-jar
-        uses: 'AleksandraAleksandrova/jar-runner-action@v1.0'
+        uses: 'AleksandraAleksandrova/jar-runner-action@1.0'
 
       - name: Print JAR Output
         run: echo "${{ steps.run-jar.outputs.jar-output }}"
