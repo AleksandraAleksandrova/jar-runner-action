@@ -5,7 +5,6 @@ async function run() {
   try {
     const jarPath = './Greet.jar'
     const name = core.getInput('name');
-    console.log(`Hello ${name}!`);
 
     await exec.exec('java', ['-jar', jarPath, name]);
     core.setOutput('jar-output', 'Success');
