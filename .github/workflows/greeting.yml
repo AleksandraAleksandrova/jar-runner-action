@@ -11,11 +11,23 @@ jobs:
     name: A job to greet the user
     
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: 'adopt'
+
       - name: Run greeting action
         id: run-greet
         uses: AleksandraAleksandrova/jar-runner-action@main
         with:
-          name: 'Anna'
+          name: 'Bella'
 
       - name: Print Greet Output
         run: echo "Greet Output:${{ steps.run-greet.outputs.jar-output }}"
