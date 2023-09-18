@@ -5,8 +5,8 @@ const path = require('path');
 async function run() {
   try {
     const name = core.getInput('name');
-    const files = core.getInput('changed-files');
-    console.log(files);
+    const filesString = core.getInput('changed-files');
+    const files = filesString.split(',');
     const greeterPath = path.join(__dirname, 'Greet.jar');
     const printerPath = path.join(__dirname, 'file-printer.jar');
 
