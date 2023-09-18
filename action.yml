@@ -1,13 +1,19 @@
-name: 'Greeter'
-description: 'Run a JAR file, which greets the user'
+name: 'Greeter and Printer'
+description: 'Run a JAR file, which greets the user and prints the contents of changed files'
 
 inputs:
   name:
     description: 'The account to greet'
+    required: True
+  changed-files:
+    description: 'List of changed files'
+    required: True
 
 outputs:
-  jar-output:
-    description: 'The output of the JAR file'
+  greeting:
+    description: 'The greeting to the person, who opened the pull request'
+  files-contents:
+    description: 'The contents of changed files'
     
 runs:
   using: 'node16'
